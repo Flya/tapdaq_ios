@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="com.webdevs.tapdaq"
+        version="0.8.2dev">
+
+    <name>TapDaq</name>
+
+    <description>Add tadaq library</description>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Tapdaq">
+                <param name="ios-package" value="TapdaqPlugin" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/TapdaqPlugin.h" />
+        <source-file src="src/ios/TapdaqPlugin.m" />
+        <source-file src="src/ios/Tapdaq.framework" framework="true" />
+
+        <framework src="Security.framework" weak="true" />
+        <framework src="SystemConfiguration.framework" weak="true" />
+        <framework src="MobileCoreServices.framework" weak="true" />
+        <framework src="QuartzCore.framework" weak="true" />
+        <framework src="CoreGraphics.framework" weak="true" />
+        <framework src="AdSupport.framework" weak="true" />
+    </platform>
+
+</plugin>
